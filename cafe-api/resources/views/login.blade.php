@@ -84,6 +84,18 @@
                 font-size: 24px;
             }
         }
+        .register-link {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        .register-link a {
+            color: #ff9800;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .register-link a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -105,6 +117,11 @@
             <input type="password" name="password" placeholder="Enter your password" required>
             <button type="submit">Sign In</button>
         </form>
+
+        <!-- Link ke halaman daftar -->
+        <div class="register-link">
+            Belum punya akun? <a href="{{ route('register') }}">Daftar</a>
+        </div>
     </div>
 </body>
 </html>

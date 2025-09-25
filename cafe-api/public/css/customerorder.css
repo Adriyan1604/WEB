@@ -1,0 +1,168 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f9f9f9, #e3e3e3);
+    padding: 40px;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.order-container {
+    background-color: #ffffff;
+    padding: 35px;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 20px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease-in-out;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.order-container img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.order-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 24px;
+    color: #333;
+}
+
+.order-container p {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.order-container label {
+    display: block;
+    margin-top: 20px;
+    font-weight: 500;
+    color: #555;
+}
+
+.order-container input[type="number"] {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    transition: border 0.2s ease-in-out;
+}
+
+.order-container input[type="number"]:focus {
+    border-color: #ff9800;
+    outline: none;
+}
+
+.total-price {
+    margin-top: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: right;
+    color: #222;
+}
+
+.pay-button {
+    margin-top: 30px;
+    padding: 14px 20px;
+    width: 100%;
+    background: linear-gradient(45deg, #ff9800, #ffb347);
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s ease;
+}
+
+.pay-button:hover {
+    background: linear-gradient(45deg, #e68900, #ff9800);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    .order-container {
+        padding: 25px;
+        border-radius: 15px;
+    }
+
+    .order-container h2 {
+        font-size: 20px;
+    }
+
+    .pay-button {
+        font-size: 16px;
+    }
+}
+
+.success-message {
+    text-align: center;
+    margin-top: 30px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.checkmark-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.checkmark {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 4px solid #4caf50;
+    position: relative;
+    animation: popIn 0.4s ease;
+}
+
+.checkmark::after {
+    content: '';
+    position: absolute;
+    left: 16px;
+    top: 10px;
+    width: 15px;
+    height: 30px;
+    border-right: 4px solid #4caf50;
+    border-bottom: 4px solid #4caf50;
+    transform: rotate(45deg);
+    animation: drawCheck 0.4s ease forwards;
+}
+
+.thanks-text {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+}
+
+@keyframes drawCheck {
+    from {
+        opacity: 0;
+        transform: scale(0.5) rotate(45deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(45deg);
+    }
+}
+
+@keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+

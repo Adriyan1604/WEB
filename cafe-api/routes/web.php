@@ -2,42 +2,45 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use Illuminate\Http\Request;
 
-Route::get('/login', function () {
-    return view('auth.login');
-})->name('login');
+// === Halaman Customer Order ===
+Route::get('/customerorder', function (Request $request) {
+    $menu = $request->query('menu');
+    $price = $request->query('price');
+    $image = $request->query('image');
+    return view('customerorder', compact('menu', 'price', 'image'));
+})->name('order.customer');
 
+Route::get('/qris', function () {
+    return view('qris');
+})->name('qris');
+
+// === Auth Routes ===
+Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
 
-// User Dashboard
+Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
+Route::post('/register', [AuthController::class, 'register'])->name('register.submit');
+
+// === Dashboard Routes ===
 Route::get('/home', function () {
     return view('home');
 })->name('user.dashboard');
 
-// Admin Dashboard
 Route::get('/admin', function () {
-    return view('admin'); // Mengarahkan ke resources/views/admin.blade.php
+    return view('admin');
 })->name('admin.dashboard');
 
-
-
-
-// Rute untuk halaman Home
+// === Public Pages ===
 Route::get('/', function () {
-    return view('home'); // Halaman Home
+    return view('home');
 });
 
-// Rute untuk halaman Menu
 Route::get('/menu', function () {
-    return view('menu'); // Halaman Menu
+    return view('menu');
 });
-
 
 Route::get('/order', function () {
-    return view('order'); // Halaman Menu
+    return view('order'); // Ini halaman order umum, bukan customerorder
 });
-
-Route::get('/login', function () {
-    return view('login'); // Halaman Menu
-});
-

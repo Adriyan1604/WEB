@@ -42,7 +42,7 @@
                 <p>Rich and creamy cold coffee with a smooth finish.</p>
                 <div class="price-and-button">
                     <span class="price">10k</span>
-                    <button class="order-btn" onclick="window.location.href='{{ url('orders/create') }}'">Order</button>
+                    <button class="order-btn" onclick="window.location.href='{{ route('order.customer', ['menu' => 'Es kopi kodya', 'price' => 10, 'image' => 'assets/coffee-frappe1.png']) }}'">Order</button>
 
                 </div>
             </div>
@@ -52,7 +52,7 @@
                 <p>Classic coffee with a touch of vanilla sweetness.</p>
                 <div class="price-and-button">
                     <span class="price">12k</span>
-                    <button class="order-btn" onclick="window.location.href='{{ url('orders/create') }}'">Order</button>
+                    <button class="order-btn" onclick="window.location.href='{{ route('order.customer', ['menu' => 'Es kopi karamel', 'price' => 12, 'image' => 'assets/coffee-frappe1.png']) }}'">Order</button>
 
                 </div>
             </div>
@@ -62,7 +62,7 @@
                 <p>Refreshing and soothing, perfect for relaxation.</p>
                 <div class="price-and-button">
                     <span class="price">12k</span>
-                    <button class="order-btn" onclick="window.location.href='{{ url('orders/create') }}'">Order</button>
+                    <button class="order-btn" onclick="window.location.href='{{ route('order.customer', ['menu' => 'Es kopi Rum', 'price' => 12, 'image' => 'assets/coffee-frappe1.png']) }}'">Order</button>
 
                 </div>
             </div>
